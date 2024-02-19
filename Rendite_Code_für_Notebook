@@ -98,7 +98,7 @@ def f(Interest_on_invest,Start_capital,Monthly_invest,years_til_payout,inflation
     ax.set_ylim(-10000, max(kk)+20000)
     plt.grid()
     plt.plot([year_adjusted[0],max(year_adjusted)],[0,0],c="black",linewidth=2)
-    plt.title("Monthly payout after "+str(round(years_til_payout,1))+" yrs after tax inflationsbereinigt:"+str(round(((payout_start*(payoutrate))*0.818/12*(1+pure/payout_start))))+",vorabsteuer bezahlt 2% p.a. :"+str(round(((payout_start*(payoutrate))*0.818/12*(1+pure/payout_start)*(1+vorabsteuer/payout_start)))))
+    plt.title("Monthly payout after "+str(round(years_til_payout,1))+" yrs after tax inflationsbereinigt:"+str(round(((payout_start*(payoutrate))*(1-(1-0.818)*(1-pure/payout_start))/12)))+",vorabsteuer bezahlt 2% p.a. :"+str(round(((payout_start*(payoutrate))*(1-(1-0.818)*(1-pure/payout_start)*(1-vorabsteuer/payout_start))/12))))
     plt.legend()
     plt.show()
 
